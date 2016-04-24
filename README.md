@@ -1,8 +1,6 @@
-# Hatenagroup
+# HatenaGroup
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hatenagroup`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The simple client library for hatena group.
 
 ## Installation
 
@@ -22,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Calendar
+
+```ruby
+require "hatenagroup"
+
+calendar = HatenaGroup::Calendar.new("mygroup", ENV["HATENA_USER_ID"], ENV["HATENA_PASSWORD"])
+d = calendar.day(Date.new(2016, 4, 1))
+d.body = "Updated Text"
+```
 
 ## Development
 
@@ -32,5 +38,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hatenagroup.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sh19910711/hatenagroup.rb.
 
