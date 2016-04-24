@@ -2,7 +2,8 @@ require 'mechanize'
 
 module HatenaGroup
   class Calendar
-    def initialize(hatena_user_id, hatena_password)
+    def initialize(group, hatena_user_id, hatena_password)
+      @group = group
       @agent = Mechanize.new
       agent.user_agent  = USER_AGENT
       agent.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -14,11 +15,12 @@ module HatenaGroup
     end
 
     def keyword(s)
-      Keyword.new agent, s
+      Keyword.new agent, group, s
     end
 
     private
       attr_reader :agent
+      attr_reader :group
 
       USER_AGENT = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
       HATENA_LOGIN_URL = 'https://www.hatena.ne.jp/login'
@@ -32,8 +34,9 @@ module HatenaGroup
       end
 
       class Keyword
-        def initialize(agent, keyword)
+        def initialize(agent, group, keyword)
           @agent = agent
+          @group = group
           @keyword = keyword
         end
 
@@ -52,13 +55,14 @@ module HatenaGroup
         private
           attr_reader :agent
           attr_reader :keyword
+          attr_reader :group
 
           def read_url
-            "http://for-travis-ci.g.hatena.ne.jp/keyword/#{keyword}?mode=edit&#{Time.now.to_i}"
+            "http://#{group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit&#{Time.now.to_i}"
           end
 
           def edit_url
-            "http://for-travis-ci.g.hatena.ne.jp/keyword/#{keyword}?mode=edit"
+            "http://#{group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit"
           end
       end
   end

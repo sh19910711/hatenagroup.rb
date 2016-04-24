@@ -13,5 +13,5 @@ describe HatenaGroup::Calendar, :vcr => vcr_opts do
   end
 
   include SpecHelper::HatenaEnv
-  let(:calendar) { HatenaGroup::Calendar.new hatena_user, hatena_password }
+  let(:calendar) { HatenaGroup::Calendar.new "for-travis-ci", hatena_user, hatena_password }
 end
