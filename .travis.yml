@@ -1,0 +1,30 @@
+language: ruby
+
+rvm:
+  - "2.3.0"
+  - "2.2"
+  - "2.1"
+  - "2.0"
+  - "1.9"
+
+sudo: false
+
+script:
+  - bundle exec rake spec
+
+cache:
+  bundler: true
+  directories:
+    - spec/fixtures/
+
+deploy:
+  provider: rubygems
+  api_key:
+    master:
+      secure: "RD/T3tK6Vmar5vFDDbaV2GdSF/04cAMDqVCtVGZjiCkPPVJCj9NdUVJhKGGg//AQ9fY4+ZXeZjeThJrzv6gK4TjnvAIhMmZA+YMdtV77tDwaeRT2+UZmYtrGiymziWPDOMPNf+GFdNo8Hx4oKhtRXLA1aeHK0OIW2uJwyLmouXxv0cw29fYTtAOkxlBcRv/hXJaLuVDs1RMYBQmIwZlXiAA2vgNbnFFO5hvQwAtMx+7r+0cxGS56e2tC99vQo572t49ePPkjv6HZKd3zd6jWpVWBWS8b5ylPT1poEIpinBJl58kI8+i/r0M7bs376Y0LgK1WV/Jk6gboixYAI4iQdFFSF99vyw9HCBP2547unnqK5dTQW6smVQyy3NSfGLjVY5teqVVB9hacC+neAtYkAy789gjWu4mr0bMGH83sKnS6nexavW51tdqRbqoqFSX/S7r1FKgBKUhLa5VhGuSgsiowtCi0SnahnJhEn7TRjGtoBt8W/jZMbBahftsiT9GRXFz0EzUiWcNxuWB1SFJZ6r1F+0/RTs4fPLUxCJKExdLX8bRsKLr1UKJEFXLgxQJ6ay9dRIQJSQus0YdYwocRYFTQVhUwEhGpvCFdI+tPdEXwavoliPG4G6BiEwA0cwGnRXfwETL68d51CbA/hxVhrZRdXfWKphPtGQJs//ou1bI="
+  gem:
+    master: hatenagroup
+  on:
+    repo: sh19910711/hatenagroup.rb
+    ruby: "2.3.0"
+
