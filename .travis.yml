@@ -14,8 +14,6 @@ script:
 
 cache:
   bundler: true
-  directories:
-    - spec/fixtures/
 
 deploy:
   provider: rubygems
