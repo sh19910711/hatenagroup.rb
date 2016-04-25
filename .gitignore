@@ -8,3 +8,5 @@
 /spec/reports/
 /spec/fixtures/vcr/
 /tmp/
+/vendor/
+*.gem
