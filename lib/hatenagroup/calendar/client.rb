@@ -16,7 +16,11 @@ module HatenaGroup
       end
 
       def day(d)
-        Keyword.new self, d.strftime("%Y-%m-%d")
+        if d.instance_of?(Date)
+          Keyword.new self, d.strftime("%Y-%m-%d")
+        else
+          Keyword.new self, d
+        end
       end
 
       private

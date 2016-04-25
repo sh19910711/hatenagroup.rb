@@ -15,7 +15,6 @@ describe HatenaGroup::Calendar, :vcr => vcr_opts do
       context :update_content do
         before { day.body = input }
         it { expect(day.body).to include input }
-        let(:input) { "this-is-test" }
       end
       let(:day) { calendar.day(Date.today.prev_month.strftime('%Y-%m-%d')) }
     end

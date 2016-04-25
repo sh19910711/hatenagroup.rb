@@ -23,5 +23,6 @@ VCR.configure do |conf|
     :record => :new_episodes,
     :serialize_with => :psych,
     :re_record_interval => 24 * 3600,
+    :match_requests_on => %i{ method uri body }
   }
 end
