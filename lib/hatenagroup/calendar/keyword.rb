@@ -12,7 +12,6 @@ module HatenaGroup
 
       def body=(s)
         client.agent.get(edit_url).form_with(:name => 'edit', :action => '/keyword') do |form|
-          next unless form
           form['body'] = s
           form.submit
         end
