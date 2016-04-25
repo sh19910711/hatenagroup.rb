@@ -22,15 +22,8 @@ module HatenaGroup
         attr_reader :keyword
 
         def edit_form(&b)
-          client.agent.get(edit_url).form_with(:name => 'edit', :action => '/keyword', &b)
-        end
-
-        def read_url
-          "http://#{client.group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit&#{::Time.now.to_i}"
-        end
-
-        def edit_url
-          "http://#{client.group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit"
+          url = "http://#{client.group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit"
+          client.agent.get(url).form_with(:name => 'edit', :action => '/keyword', &b)
         end
     end
   end
