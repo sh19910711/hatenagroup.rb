@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "mechanize", "~> 2.7.4"
 
   spec.add_development_dependency "bundler"
-  spec.add_development_dependency "rake", "~> 10.5"
-  spec.add_development_dependency "rspec", "~> 3.4"
-  spec.add_development_dependency "vcr", "~> 3.0"
-  spec.add_development_dependency "webmock", "~> 1.24"
+  spec.add_development_dependency "rake", "~> 11.1.0"
+  spec.add_development_dependency "rspec", "~> 3.4.0"
+  spec.add_development_dependency "vcr", "~> 3.0.0"
+  spec.add_development_dependency "webmock", "~> 1.24.0"
 end
