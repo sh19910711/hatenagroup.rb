@@ -1,5 +1,7 @@
 # HatenaGroup
 
+[![Build Status](https://travis-ci.org/sh19910711/hatenagroup.rb.svg?branch=master)](https://travis-ci.org/sh19910711/hatenagroup.rb)
+
 The simple client library for hatena group.
 
 ## Installation
