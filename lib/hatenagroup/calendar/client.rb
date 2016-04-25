@@ -16,7 +16,7 @@ module HatenaGroup
       end
 
       def day(d)
-        keyword d.strftime("%Y-%m-%d")
+        Keyword.new self, d.strftime("%Y-%m-%d")
       end
 
       private
@@ -27,10 +27,6 @@ module HatenaGroup
             form['persistent'] = 0
             form.submit
           end
-        end
-
-        def keyword(s)
-          Keyword.new self, s
         end
     end
   end
