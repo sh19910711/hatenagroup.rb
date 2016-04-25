@@ -7,11 +7,11 @@ module HatenaGroup
       end
 
       def body
-        client.agent.get(read_url).form_with(:name => 'edit', :action => '/keyword').field_with(:name => 'body').value
+        edit_form.field_with(:name => 'body').value
       end
 
       def body=(s)
-        client.agent.get(edit_url).form_with(:name => 'edit', :action => '/keyword') do |form|
+        edit_form do |form|
           form['body'] = s
           form.submit
         end
@@ -20,6 +20,10 @@ module HatenaGroup
       private
         attr_reader :client
         attr_reader :keyword
+
+        def edit_form(&b)
+          client.agent.get(edit_url).form_with(:name => 'edit', :action => '/keyword', &b)
+        end
 
         def read_url
           "http://#{client.group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit&#{::Time.now.to_i}"
