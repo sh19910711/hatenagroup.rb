@@ -1,3 +1,5 @@
+require 'mechanize'
+
 module HatenaGroup
   module Calendar
     class Client
@@ -6,9 +8,9 @@ module HatenaGroup
 
       def initialize(group, hatena_user_id, hatena_password)
         @group = group
-        @agent = Mechanize.new
-        agent.log = Logger.new(STDERR)
-        agent.log.level = Logger::INFO
+        @agent = ::Mechanize.new
+        agent.log = ::Logger.new(STDERR)
+        agent.log.level = ::Logger::INFO
         agent.user_agent = USER_AGENT
         login! hatena_user_id, hatena_password
       end

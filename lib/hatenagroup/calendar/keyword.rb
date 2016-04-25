@@ -23,7 +23,7 @@ module HatenaGroup
         attr_reader :keyword
 
         def read_url
-          "http://#{client.group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit&#{Time.now.to_i}"
+          "http://#{client.group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit&#{::Time.now.to_i}"
         end
 
         def edit_url

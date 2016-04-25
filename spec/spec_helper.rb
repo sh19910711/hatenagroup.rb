@@ -1,4 +1,4 @@
-require 'hatenagroup/calendar'
+require 'hatenagroup'
 require 'vcr'
 
 module SpecHelper

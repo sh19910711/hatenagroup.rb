@@ -8,7 +8,6 @@ describe HatenaGroup::Calendar, :vcr => vcr_opts do
       it { expect(day.body).to include input }
       let(:input) { "this-is-test" }
     end
-
     let(:day) { calendar.day(Date.new(2016, 4, 1)) }
   end
 

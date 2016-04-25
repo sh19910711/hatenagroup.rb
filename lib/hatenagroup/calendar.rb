@@ -1,4 +1,3 @@
-require 'mechanize'
 require 'hatenagroup/calendar/client'
 require 'hatenagroup/calendar/keyword'
 
