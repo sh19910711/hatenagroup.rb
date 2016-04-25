@@ -4,10 +4,12 @@ require 'vcr'
 module SpecHelper
   module HatenaEnv
     def hatena_user
+      raise "$HATENA_USER is not set" if ENV['HATENA_USER'].nil?
       ENV['HATENA_USER']
     end
 
     def hatena_password
+      raise "$HATENA_PASSWORD is not set" if ENV['HATENA_PASSWORD'].nil?
       ENV['HATENA_PASSWORD']
     end
   end
