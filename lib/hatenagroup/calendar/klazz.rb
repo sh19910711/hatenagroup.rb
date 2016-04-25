@@ -1,6 +1,9 @@
 module HatenaGroup
   module Calendar
     class Klazz
+      attr_reader :agent
+      attr_reader :group
+
       def initialize(group, hatena_user_id, hatena_password)
         @group = group
         @agent = Mechanize.new
@@ -15,12 +18,6 @@ module HatenaGroup
       end
 
       private
-        attr_reader :agent
-        attr_reader :group
-
-        USER_AGENT = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
-        HATENA_LOGIN_URL = 'https://www.hatena.ne.jp/login'
-
         def login!(hatena_user_id, hatena_password)
           agent.get(HATENA_LOGIN_URL).form_with(:action => '/login') do |form|
             form['name']       = hatena_user_id
@@ -31,7 +28,7 @@ module HatenaGroup
         end
 
         def keyword(s)
-          Keyword.new agent, group, s
+          Keyword.new self, s
         end
     end
   end
