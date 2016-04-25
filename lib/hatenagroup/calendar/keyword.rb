@@ -23,7 +23,7 @@ module HatenaGroup
 
         def edit_form(&b)
           url = "http://#{client.group}.g.hatena.ne.jp/keyword/#{keyword}?mode=edit"
-          client.agent.get(url).form_with(:name => 'edit', :action => '/keyword', &b)
+          client.agent.get(url).form_with(:action => '/keyword', &b)
         end
     end
   end
