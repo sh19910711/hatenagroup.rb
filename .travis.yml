@@ -7,11 +7,6 @@ rvm:
   - "2.0"
   - "1.9"
 
-sudo: false
-
-script:
-  - bundle exec rake spec
-
 cache:
   bundler: true
 
