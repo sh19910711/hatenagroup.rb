@@ -1,6 +1,6 @@
 module HatenaGroup
   module Calendar
-    class Klazz
+    class Client
       attr_reader :agent
       attr_reader :group
 

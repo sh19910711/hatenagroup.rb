@@ -1,11 +1,11 @@
 require 'mechanize'
-require 'hatenagroup/calendar/klazz'
+require 'hatenagroup/calendar/client'
 require 'hatenagroup/calendar/keyword'
 
 module HatenaGroup
   module Calendar
     def self.new(*args)
-      Klazz.new *args
+      Client.new *args
     end
 
     USER_AGENT = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'
